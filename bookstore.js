@@ -4,7 +4,6 @@ fetch('https://api.jsonbin.io/b/5d6fd038fc5937640ce286a1')
         return data.json();
     }).then(function (apiData) {
         data = apiData;
-        // console.log(data)
         getImage();
     })
 
@@ -40,25 +39,16 @@ function getImage() {
             image.src = book.cover;
             image.id = "cover";
             flipCardfront.appendChild(image);
-             //button
-            // var buttondiv=document.createElement("div");
-            // var button = document.createElement("button");
-            // button.innerHTML = "Detail"
-            // button.id = "imageButton"
-            // buttondiv.appendChild(button);
-            
+          
             var newbutton = document.createElement("button")
             newbutton.setAttribute('class', 'btn btn-primary')
             newbutton.setAttribute('data-toggle', 'modal')
             newbutton.setAttribute('data-target', '#exampleModalCenter')
             newbutton.innerHTML = "Detail"
            
-            newbutton.onclick=function() { hasan(book.detail); }
+            newbutton.onclick=function() { setUrl(book.detail); }
         
-            
-            // '<button type="button" class="btn btn-primary"   value="Detail" data-toggle="modal" data-target="#exampleModalCenter">Detail</button>'
-              
- 
+
             var title = document.createTextNode(book.title);
             var description = document.createTextNode(book.description);
             var language = document.createTextNode(book.language);
@@ -79,7 +69,6 @@ function getImage() {
             flipcardback.appendChild(title);
             flipcardback.appendChild(descriptiondiv);
             flipcardback.appendChild(languagediv);
-            // flipcardback.appendChild(buttondiv);
             flipcardback.appendChild(newbutton)
            
 
@@ -88,21 +77,6 @@ function getImage() {
         });   
 }
  
-  function hasan(url){   
+  function setUrl(url){   
     imgUrl.src=url;
   }
-
-
-
-//     var imageUrl=document.createElement("img");
-//      var src=document.createElement("src");
-//      imageUrl.src=book.detail;
-//      imageUrl.setAttribute('class', 'd-block w-100');
-//      imageUrl.appendChild(src);   
-//     document.getElementById("imgg").appendChild(imageUrl);
-//  }
-
-
-
-        
-  

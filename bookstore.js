@@ -7,7 +7,6 @@ fetch('https://api.jsonbin.io/b/5d6fd038fc5937640ce286a1')
         getImage();
     })
 
-   
 function getImage() {
     document.getElementById("main").innerHTML = "";
     var input = document.getElementById("myInput").value.toUpperCase();
@@ -76,7 +75,7 @@ function getImage() {
             flipcardinner.appendChild(flipCardfront);
         });   
 }
- 
-  function setUrl(url){   
+
+function setUrl(url){   
     imgUrl.src=url;
-  }
+}
